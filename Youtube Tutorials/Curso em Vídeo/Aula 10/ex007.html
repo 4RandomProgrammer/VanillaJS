@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somas</title>
+</head>
+<body>
+    <h1>Somando números</h1>
+    <input type="text" id="n1">
+    <input type="text" id="n2">
+    <input type="submit" id="somas">
+    <div id="res">Resultado</div>
+    <script>
+        const soma = document.getElementById('somas');
+        const textn1 = document.querySelector('#n1');
+        const textn2 = document.getElementById('n2');
+        const result = document.getElementById('res');
+
+
+
+        soma.addEventListener('click', somando);
+
+        function somando(e){
+            let numero1 = Number(textn1.value)
+            let numero2 = Number(textn2.value)
+            e.preventDefault()
+            console.log(numero1)
+            console.log(numero2)
+            result.innerText = `A soma entre ${numero1} e ${numero2} é ${numero1 + numero2}!`
+        }
+    </script>
+</body>
+</html>

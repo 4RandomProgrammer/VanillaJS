@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multas</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do Carro: <input type="number" id="txtvel"> KM/h
+    <input type="button" value="verificar" id='btn'>
+    <p id='result'>Resultdo</p>
+
+    <script>
+        const textV = document.getElementById('txtvel');
+        const result = document.getElementById('result');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', verify);
+
+        function verify(e) {
+            
+            let vel = Number(textV.value);
+
+            if(vel > 60){
+                result.innerText = `Multado! Sua velocidade era de ${vel} Km/h e a velocidade máxima permitida era de 60 Km/h`;
+            }
+            else{
+                result.innerText = `Sua velocidade esta dentro do permitido.`;
+            }
+        }
+
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            font: normal 20pt Arial;
+            background: green;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Interaja
+    </div>
+    <script>
+        const lul = document.getElementById('area');
+
+        lul.addEventListener('click', func);
+        lul.addEventListener('mouseenter', change)
+        lul.addEventListener('mouseout', saiu);
+
+        function func(e) {
+            lul.innerText = 'Clicou!'
+            if(lul.style.background == 'blue'){
+                lul.style.background = 'green';
+            }
+            else{
+                lul.style.background = 'blue';
+            }
+        }
+
+        function change(e) {
+            lul.style.background = 'red';
+            lul.innerText = 'Entrou'
+        }
+
+        function saiu(e) {
+            lul.innerText = 'Saiu!';
+            lul.style.background = 'green';
+        }
+
+    </script>
+</body>
+</html>
